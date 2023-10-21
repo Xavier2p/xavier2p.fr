@@ -2,14 +2,16 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - main
 
   workflow_dispatch:
 
 jobs:
   deployment:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v3
@@ -17,17 +19,13 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 'lts/*'
-          cache: 'npm'
+          node-version: 20
 
       - name: Build
-        run: |
-          npm i
-          npm run build
-          npm run export
+        run: npm ci && npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.ACTION_DEPLOY_KEY }}
-          publish_dir: ./out
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
