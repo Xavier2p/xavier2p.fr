@@ -1,7 +1,12 @@
-import { Text } from '@mantine/core';
+import { IProject } from '../config';
+import Project from '../components/project';
 
-const Projects = () => {
-  return <Text>Projects</Text>;
-};
+const Projects = ({ projects }: { projects: IProject[] }) => (
+  <>
+    {projects.map((project) => (
+      <Project key={project.name} project={project} />
+    ))}
+  </>
+);
 
 export default Projects;
