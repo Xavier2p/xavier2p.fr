@@ -1,19 +1,17 @@
-import { Button, Title } from '@mantine/core';
+import { Button, Group, Title } from '@mantine/core';
 import { ISocial } from '../config';
 
 const SocialGroup = ({ socials }: { socials: ISocial[] }) => (
   <>
-    <Title order={3}>Socials</Title>
-    {socials.map((item) => (
-      <Social key={item.name} item={item} />
-    ))}
+    <Title order={4}>You can reach me at:</Title>
+    <Group justify="flex-start" gap="xs">
+      {socials.map((item) => (
+        <Button key={item.name} component="a" href={item.url} variant="light" color="gray" px="x">
+          <item.icon />
+        </Button>
+      ))}
+    </Group>
   </>
-);
-
-const Social = ({ item }: { item: ISocial }) => (
-  <Button leftSection={<item.icon />} component="a" href={item.url} variant="light" color="gray" mx="sm">
-    {item.name}
-  </Button>
 );
 
 export default SocialGroup;

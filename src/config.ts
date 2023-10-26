@@ -1,4 +1,4 @@
-import { IconBrandGithub, IconBrandLinkedin, TablerIconsProps } from '@tabler/icons-react';
+import { IconBrandGithub, IconBrandLinkedin, IconMail, TablerIconsProps } from '@tabler/icons-react';
 
 interface IConfig {
   socials: ISocial[];
@@ -33,6 +33,11 @@ const cnf: IConfig = {
       url: 'https://www.linkedin.com/in/xavier-de-place',
       icon: IconBrandLinkedin,
     },
+    {
+      name: 'Mail',
+      url: 'mailto:contact@xavier2p.fr',
+      icon: IconMail,
+    },
   ],
   projects: [
     {
@@ -47,7 +52,7 @@ const cnf: IConfig = {
     {
       name: 'Fortran.rs',
       description: 'Open-Source Interpreter for the Fortran Programming Language written in Rust.',
-      logo: '',
+      logo: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/rust.png',
       docs: 'https://xavier2p.github.io/fortran.rs/',
       code: 'https://github.com/xavier2p/fortran.rs',
       deployment: null,
@@ -56,11 +61,20 @@ const cnf: IConfig = {
     {
       name: 'Surreality',
       description: 'A NewGen Portfolio',
-      logo: '',
+      logo: 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/piwigo.png',
       docs: null,
       deployment: 'https://xavier2p.github.io/surreality/',
       code: 'https://github.com/xavier2p/surreality',
       tags: ['react', 'typescript', 'rust'],
+    },
+    {
+      name: '/forge',
+      description: 'Personal Homelab, used for testing purposes and hosting my services.',
+      logo: 'https://github.com/Xavier2p/assets/blob/main/forge-logos/cyan.png?raw=true',
+      docs: null,
+      code: 'https://github.com/the-forge-lab/infrastructure',
+      deployment: 'https://public.xavier2p.fr',
+      tags: ['docker', 'terraform'],
     },
   ],
 };
