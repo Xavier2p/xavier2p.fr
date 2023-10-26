@@ -1,6 +1,6 @@
-import { Badge, Button, Card, Center, Grid, Group, Image, Text, Title, rem } from '@mantine/core';
+import { Button, Card, Center, Grid, Group, Image, Text, Title } from '@mantine/core';
 import { IProject } from '../config';
-import { IconBook, IconCode, IconHash, IconWorldCheck } from '@tabler/icons-react';
+import { IconBook, IconCode, IconWorldCheck } from '@tabler/icons-react';
 
 const Links = ({ project }: { project: IProject }) => (
   <Group justify="flex-end" gap="xs" m="xs">
