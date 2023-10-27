@@ -1,17 +1,23 @@
-import { Button, Group, Title } from '@mantine/core';
-import { ISocial } from '../config';
+import { Button, Group, Tooltip } from '@mantine/core';
+import { ISocial } from '../interfaces';
 
 const SocialGroup = ({ socials }: { socials: ISocial[] }) => (
-  <>
-    <Title order={4}>You can reach me at:</Title>
-    <Group justify="flex-start" gap="xs">
-      {socials.map((item) => (
-        <Button key={item.name} component="a" href={item.url} variant="light" color="gray" px="x">
+  <Group justify="flex-start" gap="xs" mb="xl">
+    {socials.map((item) => (
+      <Tooltip
+        key={item.name}
+        label={item.name}
+        withArrow
+        position="bottom"
+        transitionProps={{ transition: 'skew-up', duration: 300 }}
+        openDelay={300}
+      >
+        <Button component="a" href={item.url} variant="light" color="gray" px="x">
           <item.icon />
         </Button>
-      ))}
-    </Group>
-  </>
+      </Tooltip>
+    ))}
+  </Group>
 );
 
 export default SocialGroup;

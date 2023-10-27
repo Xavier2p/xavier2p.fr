@@ -1,4 +1,4 @@
-import { IProject } from '../config';
+import { IProject } from '../interfaces';
 import Project from '../components/project';
 import { ActionIcon, Group, SimpleGrid, Title } from '@mantine/core';
 import { IconArrowUpRight } from '@tabler/icons-react';

@@ -1,23 +1,47 @@
-import { Button, Card, Center, Grid, Group, Image, Text, Title } from '@mantine/core';
-import { IProject } from '../config';
+import { Button, Card, Center, Grid, Group, Image, Text, Title, Tooltip } from '@mantine/core';
+import { IProject } from '../interfaces';
 import { IconBook, IconCode, IconWorldCheck } from '@tabler/icons-react';
 
 const Links = ({ project }: { project: IProject }) => (
   <Group justify="flex-end" gap="xs" m="xs">
     {project.code && (
-      <Button component="a" href={project.code} variant="light" px="xs">
-        <IconCode />
-      </Button>
+      <Tooltip
+        label="Code"
+        withArrow
+        position="bottom"
+        transitionProps={{ transition: 'skew-up', duration: 300 }}
+        openDelay={300}
+      >
+        <Button component="a" href={project.code} variant="light" px="xs">
+          <IconCode />
+        </Button>
+      </Tooltip>
     )}
     {project.docs && (
-      <Button component="a" href={project.docs} variant="light" px="xs">
-        <IconBook />
-      </Button>
+      <Tooltip
+        label="Docs"
+        withArrow
+        position="bottom"
+        transitionProps={{ transition: 'skew-up', duration: 300 }}
+        openDelay={300}
+      >
+        <Button component="a" href={project.docs} variant="light" px="xs">
+          <IconBook />
+        </Button>
+      </Tooltip>
     )}
     {project.deployment && (
-      <Button component="a" href={project.deployment} variant="light" px="xs">
-        <IconWorldCheck />
-      </Button>
+      <Tooltip
+        label="View"
+        withArrow
+        position="bottom"
+        transitionProps={{ transition: 'skew-up', duration: 300 }}
+        openDelay={300}
+      >
+        <Button component="a" href={project.deployment} variant="light" px="xs">
+          <IconWorldCheck />
+        </Button>
+      </Tooltip>
     )}
   </Group>
 );
