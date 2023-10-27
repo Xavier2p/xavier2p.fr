@@ -41,10 +41,10 @@ jobs:
           path: ./site
 
       - name: Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        uses: SamKirkland/FTP-Deploy-Action@v2.0.0
         with:
-          server: ${{ secrets.FTP_HOSTNAME}}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./site/
-          timeout: 120000
+          ftp_server: ${{ secrets.FTP_HOSTNAME}}
+          ftp_username: ${{ secrets.FTP_USERNAME }}
+          ftp_password: ${{ secrets.FTP_PASSWORD }}
+          local_dir: ./site/
+          method: sftp
