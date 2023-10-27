@@ -34,14 +34,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
       - name: Download Artifacts
         uses: actions/download-artifact@v3
         with:
           name: website
           path: ./site
+
       - name: Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
