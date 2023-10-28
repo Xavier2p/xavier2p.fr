@@ -1,9 +1,13 @@
-import { Code, Text, Title } from '@mantine/core';
+import { Alert, Code, Text, Title } from '@mantine/core';
 import cnf from '../config';
 import SocialGroup from '../components/social';
+import { IconAlertTriangle } from '@tabler/icons-react';
 
 const Hero = () => (
   <>
+    <Alert variant="light" color="yellow" radius="md" title="Warning" icon={<IconAlertTriangle />}>
+      This website is still under construction, some information may be missing or incomplete.
+    </Alert>
     <Title order={1} mt="lg" mb="xs">
       Hey, I'm Xavier2p!
     </Title>
