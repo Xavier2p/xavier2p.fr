@@ -5,9 +5,6 @@ import { IconAlertTriangle } from '@tabler/icons-react';
 
 const Hero = () => (
   <>
-    <Alert variant="light" color="yellow" radius="md" title="Warning" icon={<IconAlertTriangle />}>
-      This website is still under construction, some information may be missing or incomplete.
-    </Alert>
     <Title order={1} mt="lg" mb="xs">
       Hey, I'm Xavier2p!
     </Title>
@@ -18,6 +15,9 @@ const Hero = () => (
       I'm a studying at EPITA and I work as DevOps at <Code>COMPANY_NAME</Code>.
     </Text>
     <SocialGroup socials={cnf.socials} />
+    <Alert variant="light" color="yellow" radius="md" title="Warning" icon={<IconAlertTriangle />}>
+      This website is still under construction, some information may be missing or incomplete.
+    </Alert>
   </>
 );
 
