@@ -1,8 +1,13 @@
-import { IconBrandGithub, IconBrandLinkedin, IconMail } from '@tabler/icons-react';
+import { IconBrandGithub, IconBrandLinkedin, IconMail, IconPhoto } from '@tabler/icons-react';
 import { IConfig } from './interfaces';
 
 const cnf: IConfig = {
   socials: [
+    {
+      name: 'Frames',
+      url: 'https://frames.xavier2p.fr',
+      icon: IconPhoto,
+    },
     {
       name: 'GitHub',
       url: 'https://github.com/Xavier2p',
